@@ -1,3 +1,6 @@
 {
-    "name": "Azure"
+    "name": "Azure",
+    "users" : ["niels@timeboxer.dk",
+            "ngjoh@nets.eu"
+    ]
 }
