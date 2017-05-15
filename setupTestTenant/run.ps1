@@ -4,7 +4,7 @@ if ($PSScriptRoot){
     Import-Module ".\modules\hexa-functions.psm1"
 }
 
-Get-Hexa $req $res $PSScriptRoot
+Enter-Hexa $req $res $PSScriptRoot
 
 $account = Connect-AzureAD -Credential $global:credentials -ErrorAction:Stop
 
@@ -15,7 +15,7 @@ foreach ($user in $global:request.users) {
     $PasswordProfile.Password = "Password123456!"
     $upn = $name + "@" + $global:o365Tenant + ".onmicrosoft.com"
 
-    $aduser = Get-AzureADUser $upn
+    $aduser = Get-AzureADUser -ObjectId $upn  
     if ($aduser -eq $null){
         New-AzureADUser -DisplayName "User $name" -PasswordProfile $PasswordProfile -UserPrincipalName $upn -AccountEnabled $true -MailNickName $name 
         $usersCreated += 1
@@ -23,4 +23,4 @@ foreach ($user in $global:request.users) {
 }
 
 
-Set-Hexa $usersCreated
+Exit-Hexa "Created $usersCreated users"

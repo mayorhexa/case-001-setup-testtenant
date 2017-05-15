@@ -27,7 +27,7 @@ $initConfig = @"
     ]
 }
 "@
-function Get-Hexa{
+function Enter-Hexa{
     param($req,$res,$this)
 
     #TODO: Check Environment
@@ -104,7 +104,7 @@ function Get-Parameter{
 
 }
 
-function Set-Hexa{
+function Exit-Hexa{
     param(
         $result
     )
@@ -126,7 +126,7 @@ function Set-Hexa{
 
 }
 
-function Hexa-Log($text){
+function Write-HexaLog($text){
     if ($global:hexaLog  -eq $null){
         $global:hexaLog = @()
     }
@@ -134,7 +134,7 @@ function Hexa-Log($text){
     $global:hexaLog += "$(get-date -Format 'HH:mm:ss')  $text"
 }
 
-function Output-Hexalog(){
+function Show-Hexalog(){
 if ($global:hexaLog -ne $null){
     foreach ($item in $global:hexaLog) {
         Write-Output $item
