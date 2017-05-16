@@ -29,7 +29,7 @@ foreach ($email in $global:request.users) {
                         -UsageLocation "DK"
         $usersCreated += 1
     }
-    Set-AzureADUser -ObjectId $upn -UsageLocation "DK" 
+    Set-AzureADUser -ObjectId $upn -UsageLocation "DK"      
     
     # Create the objects we'll need to add and remove licenses
     $license = New-Object -TypeName Microsoft.Open.AzureAD.Model.AssignedLicense
