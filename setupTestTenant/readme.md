@@ -1,10 +1,18 @@
-# HttpTrigger - PowerShell
+# Setting up a Test Tenant
+Sample input
+```json
+{
+    "name": "Azure",
+    "users": [
+        "ngjoh@nets.eu",
+        "martjo@microsoft.com"
 
-The `HttpTrigger` makes it incredibly easy to have your functions executed via an HTTP call to your function.
-
+    ]
+}
+```
 ## How it works
 
-When you call the function, be sure you checkout which security rules you apply. If you're using an apikey, you'll need to include that in your request.
+Provided an array of email address, 2 accounts are created per each, one assigned a license, and one being administrator
 
 ## Learn more
 

@@ -64,7 +64,7 @@ function Enter-Hexa{
         }
         $global:testing = $true
         $Global:resultOutPutFileName = "$this\output.json"
-        $triggerInput = "$this\sample.dat"
+        $triggerInput = "$this\input.json"
         $inputJSON = Get-Content $triggerInput -Raw
         $Global:request =  ConvertFrom-Json -InputObject $inputJSON
     }
