@@ -45,6 +45,8 @@ foreach ($email in $global:request.users) {
     Set-AzureADUserLicense -ObjectId $upn -AssignedLicenses $licenses
 
 
+## KOMPLEKS PASSWORD
+
     $admuser = $null
     $admuser = Get-AzureADUser -ObjectId $admupn  -ErrorAction:SilentlyContinue
     if ($admuser -eq $null){
